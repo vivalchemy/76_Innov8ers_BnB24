@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link href="css/login_signup.css" rel="stylesheet" />
+  <script src="firebase/firebaseSetup.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <form action="#" id="login">
+      <!-- logo -->
+      <a href="index.html" class="logo">
+        <img src="assets/corruption_raw.jpg" alt="Logo" class="logo-avatar" align="middle" width="290" height="90" />
+        <p class="logo-text">
+          CorruptionWatchers
+        </p>
+      </a>
+      <!-- login -->
+      <div class="title">Login</div>
+      <!-- input fields -->
+     
+      <div class="input-box underline">
+        <input type="text" placeholder="Enter Your Email" id="loginEmail" required />
+        <div class="underline"></div>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Enter Your Password" id="loginPassword" required />
+        <div class="underline"></div>
+      </div>
+      <div class="input-box button">
+        <input type="submit" name="" value="Login" id="login1"/>
+      </div>
+    </form>
+    <div class="sign-up-prompt">
+      <span>Don't have an account ?</span>
+      <a href="Signup.html" class="sign-up-button"> Sign-up</a>
+    </div>
+
+  </div>
+  </div>
+  <script type="module">
+          // Import the functions you need from the SDKs you need
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+          import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+          
+
+          const firebaseConfig = {
+              apiKey: "AIzaSyCXQQu_EHt4ov55yini3q1huXTPLKGzqOU",
+              authDomain: "logingenerator-8d229.firebaseapp.com",
+              databaseURL: "https://logingenerator-8d229-default-rtdb.firebaseio.com",
+              projectId: "logingenerator-8d229",
+              storageBucket: "logingenerator-8d229.appspot.com",
+              messagingSenderId: "24678832465",
+              appId: "1:24678832465:web:c388a5a7087890ea08db70"
+            };
+
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+          //const analytics = getAnalytics(app);
+          const auth = getAuth(app);
+
+          document.getElementById("login1").addEventListener('click', function(e){
+          e.preventDefault();
+
+          const email = document.getElementById("loginEmail").value;
+          const password = document.getElementById("loginPassword").value;
+
+          signInWithEmailAndPassword(auth, email, password)
+              .then((userCredential) => {
+                  // User is signed in
+                  const user = userCredential.user;
+                  alert("Login Successful!");
+              })
+              .catch((error) => {
+                  const errorCode = error.code;
+                  const errorMessage = error.message;
+                  alert("Wrong email or password")
+                  //alert(errorMessage);
+              });
+});
+</script>
+</body>
+
+</html>
