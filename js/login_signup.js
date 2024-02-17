@@ -7,7 +7,7 @@ function validateEmail(email) {
 }
 
 // Example usage
-const emailInput = document.getElementById('emailInput').value;
+const loginInput = document.getElementById('login').value;
 if (validateEmail(emailInput)) {
     console.log('Email is valid');
 } else {
