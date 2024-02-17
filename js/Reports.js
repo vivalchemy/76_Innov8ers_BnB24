@@ -1,5 +1,5 @@
 function showContent() {
-  document.getElementById("show-more-content").style.display = "none";
+  // document.getElementById("show-more-content").style.display = "none";
   let messages = [
     {
       title: "Important Update",
@@ -104,4 +104,7 @@ function showContent() {
 
   document.body.appendChild(messageGrid);
 }
-
+document.addEventListener("DOMContentLoaded", function() {
+  // Your code here
+  showContent();
+});
