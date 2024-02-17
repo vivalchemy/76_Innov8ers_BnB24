@@ -1,0 +1,92 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 2rem;
+}
+
+.message-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.message {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-details {
+  display: flex;
+  gap: 10px;
+  justify-content: top;
+  margin-bottom: 1rem;
+}
+
+.profile-picture {
+  border: 1px solid #000;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.message-title {
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 5px;
+}
+
+.message-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  margin-top: 5px;
+}
+.message-text {
+  margin-bottom: 1.6rem;
+  flex: 1;
+}
+.button-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.button-container button {
+  background-color: white;
+  border-radius: 20%;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.attachment-button::before {
+  content: url("/assets/paperclip.svg");
+  position: relative;
+  top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .message-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .message-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

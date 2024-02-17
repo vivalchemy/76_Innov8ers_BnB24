@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Hidden Content</title>
+    <link rel="stylesheet" href="css/Reports_temp.css" />
+    <script src="js/Reports_temp.js"></script>
+  </head>
+  <body>
+    <button onclick="showContent()" id="show-more-content">
+      Show hidden content
+    </button>
+
+    <template id="messageTemplate">
+      <div class="message">
+        <div class="message-text">
+          <div class="user-details">
+            <img class="profile-picture" src="assets/user.svg" alt="" />
+            <p class="username">Anoymous-monkey</p>
+          </div>
+          <p class="message-title"></p>
+          <p class="message-content"></p>
+        </div>
+        <div class="button-container">
+
+          <button class="like-button">
+            <img src="assets/chevron-up.svg" alt="" />
+          </button>
+          <div class="votes">0</div>
+          <button class="dislike-button">
+            <img src="assets/chevron-down.svg" alt="" />
+          </button>
+          <span class="attachment-button"></span>
+        </div>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>
+
