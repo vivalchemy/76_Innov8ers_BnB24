@@ -127,11 +127,8 @@ a {
   margin-bottom: 2rem;
 }
 .logo-avatar {
-  width: 50px;
+  width: 400px;
   height: auto;
-}
-.logo-text {
-  font-size: 2rem;
 }
 
 .sign-up-prompt {

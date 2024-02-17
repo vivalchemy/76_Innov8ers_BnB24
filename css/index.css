@@ -114,8 +114,8 @@ section {
 }
 
 .header .logo img {
-  height: 100px;
-  width: 100px;
+  height: auto;
+  width: 200px;
 }
 .header .navbar a {
   margin: 0 1rem;
