@@ -1,30 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Signup</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/signup.css"  rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
+  <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link href="css/login_signup.css" rel="stylesheet" />
 </head>
+
 <body>
-    <div class="Sign-up-form">
-        <img src="logo.jpg">
-        <h1>Sign up</h1>
-        <form>
-            <input type="email" class = "input-box" placeholder="Enter your email">
-            <input type="password" class = "input-box" placeholder="Enter your Password">
-            <p><span><input type="checkbox" required></span> I agree to the <a href="#"><u>terms and conditions</u></a></p>
-            <button type="button" class="Sign-up-btn">Sign Up</button>  
-            <hr>
-            <p class="or">OR</p>
-            <button type="button" class="google"><i class="fab fa-google"></i> Sign up with Google</button><br>
-            <p>Already have an account ?</p>
-            <button class="login"><a href="index.html"></a>Login</button>
-        </form>    
+  <div class="container">
+    <form action="#">
+      <!-- logo -->
+      <div class="logo">
+        <img src="assets/corruption_raw.jpg" alt="Logo" class="logo-avatar" align="middle" width="290" height="90" />
+        <p class="logo-text">
+          CorruptionWatchers
+        </p>
+      </div>
+      <!-- login -->
+      <div class="title">Signup</div>
+      <!-- input fields -->
+      <div class="input-box underline">
+        <input type="number" placeholder="Enter Your Mobile Number" required />
+        <div class="underline"></div>
+      </div>
+      <div class="input-box underline">
+        <input type="text" placeholder="Enter Your Email" required />
+        <div class="underline"></div>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Enter Your Password" required />
+        <div class="underline"></div>
+      </div>
+      <div class="input-box button">
+        <input type="submit" name="" value="Sign Up" />
+      </div>
+    </form>
+    <div class="sign-up-prompt">
+      <span>Already have an account ?</span>
+      <a href="index.html" class="sign-up-button"> Login</a>
     </div>
+
+  </div>
+  </div>
 </body>
+
 </html>
