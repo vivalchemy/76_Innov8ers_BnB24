@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Signup</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
+    <link href="css/signup.css"  rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
 </head>
 <body>
-    
+    <div class="Sign-up-form">
+        <img src="logo.jpg">
+        <h1>Sign up</h1>
+        <form>
+            <input type="email" class = "input-box" placeholder="Enter your email">
+            <input type="password" class = "input-box" placeholder="Enter your Password">
+            <p><span><input type="checkbox" required></span> I agree to the <a href="#"><u>terms and conditions</u></a></p>
+            <button type="button" class="Sign-up-btn">Sign Up</button>  
+            <hr>
+            <p class="or">OR</p>
+            <button type="button" class="google"><i class="fab fa-google"></i> Sign up with Google</button><br>
+            <p>Already have an account ?</p>
+            <button class="login"><a href="index.html"></a>Login</button>
+        </form>    
+    </div>
 </body>
 </html>
