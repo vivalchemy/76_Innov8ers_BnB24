@@ -24,28 +24,64 @@
       <div class="title">Signup</div>
       <!-- input fields -->
       <div class="input-box underline">
-        <input type="number" placeholder="Enter Your Mobile Number" required />
+        <input type="text" placeholder="Seet your username" id="username" required />
         <div class="underline"></div>
       </div>
       <div class="input-box underline">
-        <input type="text" placeholder="Enter Your Email" required />
+        <input type="number" placeholder="Enter Your Mobile Number" id="phone" required />
+        <div class="underline"></div>
+      </div>
+      <div class="input-box underline">
+        <input type="text" placeholder="Enter Your Email" id="email" required />
         <div class="underline"></div>
       </div>
       <div class="input-box">
-        <input type="password" placeholder="Enter Your Password" required />
+        <input type="password" placeholder="Set Your Password" id="password" required />
         <div class="underline"></div>
       </div>
       <div class="input-box button">
-        <input type="submit" name="" value="Sign Up" />
+        <input type="submit" name="" value="Sign Up" id="submit" />
       </div>
     </form>
     <div class="sign-up-prompt">
       <span>Already have an account ?</span>
       <a href="index.html" class="sign-up-button"> Login</a>
-    </div>
+    </div> 
 
   </div>
   </div>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"; // Corrected import
+    
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCXQQu_EHt4ov55yini3q1huXTPLKGzqOU",
+            authDomain: "logingenerator-8d229.firebaseapp.com",
+            databaseURL: "https://logingenerator-8d229-default-rtdb.firebaseio.com",
+            projectId: "logingenerator-8d229",
+            storageBucket: "logingenerator-8d229.appspot.com",
+            messagingSenderId: "24678832465",
+            appId: "1:24678832465:web:c388a5a7087890ea08db70"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    // Get a reference to the database service
+    const db = getDatabase(app);
+
+    document.getElementById("submit").addEventListener('click', function(e){
+        e.preventDefault();
+        set(ref(db, 'Login-Info:/' + document.getElementById("username").value), {
+            username: document.getElementById("username").value,
+            email: document.getElementById("email").value,
+            PhoneNumber: document.getElementById("phone").value,
+            password: document.getElementById("password").value
+        });
+        alert("Login Successful!");
+    });
+</script>
 </body>
 
 </html>
