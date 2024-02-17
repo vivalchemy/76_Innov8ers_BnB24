@@ -24,7 +24,7 @@
       <div class="title">Signup</div>
       <!-- input fields -->
       <div class="input-box underline">
-        <input type="text" placeholder="Seet your username" id="username" required />
+        <input type="text" placeholder="Set your username" id="username" required />
         <div class="underline"></div>
       </div>
       <div class="input-box underline">
@@ -46,42 +46,58 @@
     <div class="sign-up-prompt">
       <span>Already have an account ?</span>
       <a href="index.html" class="sign-up-button"> Login</a>
-    </div> 
+    </div>
+  </div>
 
-  </div>
-  </div>
   <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
     import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"; // Corrected import
-    
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
     // Your web app's Firebase configuration
     const firebaseConfig = {
-        apiKey: "AIzaSyCXQQu_EHt4ov55yini3q1huXTPLKGzqOU",
-            authDomain: "logingenerator-8d229.firebaseapp.com",
-            databaseURL: "https://logingenerator-8d229-default-rtdb.firebaseio.com",
-            projectId: "logingenerator-8d229",
-            storageBucket: "logingenerator-8d229.appspot.com",
-            messagingSenderId: "24678832465",
-            appId: "1:24678832465:web:c388a5a7087890ea08db70"
+      apiKey: "AIzaSyCXQQu_EHt4ov55yini3q1huXTPLKGzqOU",
+      authDomain: "logingenerator-8d229.firebaseapp.com",
+      databaseURL: "https://logingenerator-8d229-default-rtdb.firebaseio.com",
+      projectId: "logingenerator-8d229",
+      storageBucket: "logingenerator-8d229.appspot.com",
+      messagingSenderId: "24678832465",
+      appId: "1:24678832465:web:c388a5a7087890ea08db70"
     };
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     // Get a reference to the database service
     const db = getDatabase(app);
+    const auth = getAuth(app);
 
-    document.getElementById("submit").addEventListener('click', function(e){
-        e.preventDefault();
-        set(ref(db, 'Login-Info:/' + document.getElementById("username").value), {
-            username: document.getElementById("username").value,
-            email: document.getElementById("email").value,
-            PhoneNumber: document.getElementById("phone").value,
-            password: document.getElementById("password").value
+    document.getElementById("submit").addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const phone = document.getElementById("phone").value;
+
+      createUserWithEmailAndPassword(auth, email, password, phone)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          set(ref(db, 'users/' + user.uid), {
+            username: username,
+            email: email,
+            phone: phone,
+            password: password
+          });
+          alert("Registration Successful!");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorMessage);
         });
-        alert("Login Successful!");
     });
-</script>
+  </script>
 </body>
 
 </html>
