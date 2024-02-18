@@ -1,11 +1,77 @@
+:root {
+  --main-color: rgba(207, 124, 144);
+  --black: #13131a;
+  --bg: #d1f0f0;
+  --border: 1rem solid rgba(255, 255, 255, 0.3);
+}
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
-
+html {
+  /* font-size: 62.5%; */
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 0.5rem;
+}
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 0.4rem;
+}
 body {
-  padding: 2rem;
+  background: linear-gradient(to right, #747caae8 0%, #3e028b 100%);
+  padding: 8rem 2rem;
+}
+
+.header {
+  background: rgba(83, 38, 50);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 7%;
+  border-bottom: var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 100px;
+  text-transform: capitalize;
+}
+
+.header .logo img {
+  height: auto;
+  width: 200px;
+}
+.header .navbar a {
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.header .navbar a:hover {
+  color: var(--main-color);
+  border-bottom: 1rem solid var(--main-color);
+  padding-bottom: 0.5rem;
+}
+
+.header .icon div {
+  color: #fff;
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+.header .icon div:hover {
+  color: var(--main-color);
 }
 
 .message-grid {
@@ -27,6 +93,7 @@ body {
   gap: 10px;
   justify-content: top;
   margin-bottom: 1rem;
+  color: #ff3;
 }
 
 .profile-picture {
@@ -65,11 +132,13 @@ body {
 }
 
 .button-container button {
-  background-color: white;
   border-radius: 20%;
   padding: 3px;
   display: flex;
   align-items: center;
+  background-image: linear-gradient(rgb(94, 97, 43), #ea738dff);
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .attachment-button::before {
