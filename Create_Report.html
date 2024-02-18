@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discord Form</title>
+    <link rel="stylesheet" href="css/Create_Report.css" />
+  </head>
+  <body>
+    <div id="form-container">
+      <div id="title-section">
+        <form id="titleForm">
+          <label for="title">Title of Message:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Title" />
+        </form>
+      </div>
+
+      <div id="message-section">
+        <form id="messageForm">
+          <label for="message">Your Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Message"></textarea>
+        </form>
+      </div>
+
+      <div id="location-section">
+        <form id="locationForm">
+          <label for="latitude">Location of incident:</label>
+          <input
+            type="text"
+            id="latitude"
+            name="latitude"
+            placeholder="e.g.40.711449, -74.013855" />
+
+          <!-- <label for="longitude">Longitude:</label> -->
+          <!-- <input type="text" id="longitude" name="longitude" placeholder="Longitude"> -->
+
+          <button type="button" id="geolocation-btn">Get Geolocation</button>
+        </form>
+      </div>
+
+      <div id="file-section">
+        <button class="file_submission">Upload File</button>
+        <form id="fileForm">
+          <label for="file">File Upload:</label>
+          <input type="file" id="file" name="file" >
+        </form>
+      </div>
+      <button style="display:block;width:120px; height:30px;" onclick="document.getElementById('file').click()">Your text here</button>
+        <input type='file' id="getFile" style="display:none">
+
+      <button type="button" id="submit-btn" onclick="submitForm()">
+        Submit
+      </button>
+    </div>
+
+    <script src="js/Create_Report.js"></script>
+  </body>
+</html>

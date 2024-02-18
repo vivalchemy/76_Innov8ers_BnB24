@@ -42,3 +42,8 @@ window.addEventListener("message", function (event) {
   }
 });
 
+og_file_submission_btn=document.getElementByClass("file_submission")
+
+og_file_submission_btn.addEventListener("click", function () {
+  document.getElementById("file").click();
+});
