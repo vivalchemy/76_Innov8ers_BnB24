@@ -45,7 +45,7 @@ async function showReports(reports) {
   await reports.sort((a, b) => b.count - a.count);
   // const reports = await fetchReports();
   reports.forEach((report) => {
-    console.log(report.title, "  ", report.report, "   ", report.count);
+    // console.log(report.title, "  ", report.report, "   ", report.count);
   });
   reports.forEach((report) => {
     let clone = messageTemplate.content.cloneNode(true);
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   // Fetch reports data
   const reports = await fetchReports();
   reports.forEach((report) => {
-    console.log(report.title, "  ", report.report, "   ", report.count);
+    // console.log(report.title, "  ", report.report, "   ", report.count);
   });
   await showReports(reports);
 });
