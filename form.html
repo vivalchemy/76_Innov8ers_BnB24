@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Form</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <div id="form-container">
+        <div id="title-section">
+            <h2>Title Section</h2>
+            <form id="titleForm">
+                <label for="title">Title Message:</label>
+                <input type="text" id="title" name="title" placeholder="Enter your title">
+            </form>
+        </div>
+        
+        <div id="message-section">
+            <h2>Message Section</h2>
+            <form id="messageForm">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+            </form>
+        </div>
+
+        <div id="location-section">
+            <h2>Location Section</h2>
+            <form id="locationForm">
+                <label for="latitude">Latitude:</label>
+                <input type="text" id="latitude" name="latitude" placeholder="Latitude">
+
+                <label for="longitude">Longitude:</label>
+                <input type="text" id="longitude" name="longitude" placeholder="Longitude">
+
+                <button type="button" id="geolocation-btn">Get Geolocation</button>
+            </form>
+        </div>
+
+        <div id="file-section">
+            <h2>File Upload Section</h2>
+            <form id="fileForm">
+                <label for="file">File Upload:</label>
+                <input type="file" id="file" name="file">
+            </form>
+        </div>
+
+        <a href="Reports.html"><button type="button" id="submit-btn" onclick="submitForm()">Submit</button></a>
+    </div>
+
+    <script src="js/form.js"></script>
+</body>
+</html>

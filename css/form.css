@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #36393f;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+#form-container {
+    background-color: #202225;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Decreased width to 80% */
+    max-width: 400px; /* Maximum width for the form */
+    text-align: center;
+}
+
+#title-section,
+#message-section,
+#location-section,
+#file-section {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="file"],
+textarea {
+    width: calc(100% - 20px); /* Adjusted width to accommodate margin */
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#geolocation-btn,
+#submit-btn {
+    background-color: #7289da;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
